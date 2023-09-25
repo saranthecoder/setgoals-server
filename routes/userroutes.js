@@ -5,7 +5,6 @@ const schema = require('../user/usermodel')
 router.get('/', async (req, res) => {
     try {
       const data = await schema.findOne().sort({ timestamp: -1 });
-      console.log("Units Burned..."data.units)
   
       if (!data) {
         return res.status(404).json({ message: 'No data found' });
